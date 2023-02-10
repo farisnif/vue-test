@@ -1,40 +1,25 @@
 <template>
-  <h1>{{ msg }}</h1>
-
-<!-- My custom code -->
-<button class="outsideBtn" v-on:click="duplicate">Duplicate</button>
-<button class="outsideBtn" v-on:click="background">Background</button>
-<button class="outsideBtn" v-on:click="heading">Heading</button>
-<button class="outsideBtn" v-on:click="deleter">Delete</button>
-
-<div class="card" v-on:mouseover="hoover">
-  <h1 class="title">Chad of Cyber IST</h1>
-
-  <img class="giaImg" src="https://media.discordapp.net/attachments/963095262363017246/1020131830323744788/unknown.png?width=468&height=468" alt="Professor Giacobe">
-  
-<div class="textbox">
-  <details>
-    <summary class="haxbtn">Details</summary>
-    <p class="description pScale">Professor Giacobe may look like a simple man but perceptions can be misleading. Underneath the facade of a simple college of IST professor lies the holiness of an <strong>IST GOD</strong>!</p>
-  </details>
-
+  <div class="crd">
+  <div class="container">
+    <div class="header">
+      <h1>A Picture of a Sunset</h1>
+      <img class="image" src="https://media.cntraveler.com/photos/576834ff90b3537d7c010c05/16:9/w_2560%2Cc_limit/GettyImages-162672165.jpg" alt="A picture"/>
+      <div class="subheader">
+        <h2>A Picture of a Plane in a Sunset</h2>
+      </div>
+    </div>
+  </div>
+  <div class="paragraph">
+    <p>This is a picture of a Boeing 787 taking off during sunset.</p>
+  </div>
+  <div class="buttons">
+    <button class="details">Details</button>
   </div>
 </div>
-
-
-  <p>
-    <a href="https://vitejs.dev/guide/features.html" target="_blank">
-      Vite Documentation
-    </a>
-    |
-    <a href="https://v3.vuejs.org/" target="_blank">Vue 3 Documentation</a>
-  </p>
-
-  <button type="button" @click="state.count++">count is: {{ state.count }}</button>
-  <p>
-    Edit
-    <code>components/HelloWorld.vue</code> to test hot module replacement.
-  </p>
+<button class="somethingelse" v-on:click="heading">Something Else</button>
+<button class="addOne" v-on:click="duplicate">Add</button>
+<button class="remove" v-on:click="takeaway">Delete One</button>
+<button class="colorChanger" v-on:click="background">Color Changer</button>
 </template>
 
 <script setup>
@@ -51,54 +36,75 @@ const state = reactive({ count: 0 })
 
 export default {
   methods: {
-    hoover() {
-      document.querySelectorAll(".card").forEach((item) => {
-        if(!item.classList.contains("hoverCard")){
-          item.classList.add("hoverCard");
-          console.log(item);
-        }
-        else{
-          item.classList.remove("hoverCard");
-          console.log(item);
-        }
-      });
-    },
-    
+    //add another card
     duplicate() {
-      const cloneCard = document.querySelector(".card").cloneNode(true);
-      document.body.appendChild(cloneCard);
-      console.log(cloneCard);    
+          document.querySelector(".addOne")
+      .addEventListener("click", function addCard(e) {
+        const cardWhole = document.querySelector(".crd").cloneNode(true);
+        document.body.appendChild(cardWhole);
+      });    
     },
-
+//change background color
     background() {
-      document.querySelectorAll(".card").forEach((item) => {
-        if(!item.classList.contains("basic")){
-          item.classList.add("basic");
-          console.log(item);
-        }
-        else{
-          item.classList.remove("basic");
-          console.log(item);
+          document.querySelector(".colorChanger").addEventListener("click", function changeColor(e) {
+        const div = document.querySelector("div");
+        if (div.style.backgroundColor != "red") {
+          div.style.backgroundColor = "red";
+        } else {
+          div.style.backgroundColor = "skyblue";
         }
       });
+      // document.querySelectorAll(".card").forEach((item) => {
+      //   if(!item.classList.contains("basic")){
+      //     item.classList.add("basic");
+      //     console.log(item);
+      //   }
+      //   else{
+      //     item.classList.remove("basic");
+      //     console.log(item);
+      //   }
+      // });
+    },
+//change header
+    heading() {
+      document.querySelector(".somethingelse")
+        .addEventListener("click", function changeHeading(e) {
+          document.querySelector("h1").innerHTML = "something else";
+        });
+      // document.querySelectorAll(".title").forEach((item) => {   
+      //   if(item.innerHTML=="something else"){
+      //     item.innerHTML="Chad of Cyber IST";
+      //   }
+      //   else{
+      //     item.innerHTML="something else";
+      //   }
+      // });
     },
 
-    heading() {
-      document.querySelectorAll(".title").forEach((item) => {   
-        if(item.innerHTML=="something else"){
-          item.innerHTML="Chad of Cyber IST";
-        }
-        else{
-          item.innerHTML="something else";
-        }
-      });
+    takeaway(){
+        document.querySelector(".remove")
+    .addEventListener("click", function removeCard(e) {
+      const cardWhole = document.querySelector(".crd").parentNode;
+      cardWhole.removeChild(cardWhole.lastChild);
+  });
     },
+
+    additionalinfo(){
+      document.querySelector(".details").addEventListener("click", function textVisibility(e) {
+    var info = document.querySelector("p");
+    if (info.style.display === "none") {
+      info.style.display = "block";
+    } else {
+      info.style.display = "none";
+    }
+  });
+    }
 
     //Kinda borked rn
-    deleter(){
-      document.querySelector(".card:last-child").remove();
-      console.log(card);
-    }
+    // deleter(){
+    //   document.querySelector(".card:last-child").remove();
+    //   console.log(card);
+    // }
   }
 }
 </script>

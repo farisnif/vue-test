@@ -11,129 +11,125 @@ import HelloWorld from './components/HelloWorld.vue'
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-
-.card{
-  border-radius: 24px;
-  border: 3px solid #041E42;
-  padding: 8px;
-  width: 400px;
-  display: block;
-  margin: auto;
-  position: relative;
-  overflow: hidden;
-  box-shadow: 0px 8px 24px #999;
-  background-color: lightgrey;
-  text-align: center;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-.textbox{
-  font-size: 15px;
-  margin-left: 112px;
-  text-align: right;
-  border-radius: 24px;
-}
-
-.description{
-  text-shadow: -1px 1px 2px #FFFFFF,
-				  1px 1px 2px #FFFFFF,
-				  1px -1px 0 #FFFFFF,
-				  -1px -1px 0 #FFFFFF;
-}
-
-.haxbtn{
-  display:inline-block;
-  text-align: center;
-  color: white;
-  background-color: #041E42;
-  border-radius: 5px;
-  font-size: 20px;
-  width: 120px;
-  height: 32px;
-  box-shadow: 0px 10px 24px #999;
-  border: 1px solid #041E42;
-  visibility: visible;
-  padding-top: 10px;
-  margin-right: 32px;
-}
-
-.haxbtn:hover{
-  color: #e0e0e0;
-  background-color: #07377a;
-  box-shadow: 0px 10px 24px white;
-  border: 1px solid #07377a;
-}
-
-.haxbtn:focus{
-  color: #e0e0e0;
-  background-color: #07377a;
-  box-shadow: 0px 10px 24px white;
-  border: 1px solid #07377a;
-}
-
-.title{
-  color: white;
-  font-size: 24px;
-  text-shadow: -1px 1px 2px #000,
-				  1px 1px 2px #000,
-				  1px -1px 0 #000,
-				  -1px -1px 0 #000;
-}
-
-.giaImg{
-  width: 200px;
-  border-radius: 24px;
-  box-shadow: 0px 10px 24px #999;
+.crd{
+  padding: 12px;
+  background-color: skyblue;
+  border-radius: 12px;
+  border: 6px solid black;
+  max-width: 300px;
+  padding: 12px;
   float: left;
 }
-
-.outsideBtn{
-  color: white;
-  background-color: #041E42;
-  border-radius: 5px;
-  font-size: 20px;
-  width: 120px;
-  height: 50px;
-  box-shadow: 0px 10px 24px #999;
-  border: 1px solid #041E42;
-  margin-right: 32px;
-  margin-bottom: 16px;
-  display: inline-block;
+.image{
+  width: 100%;
 }
-
-.outsideBtn:hover{
-  color: #e0e0e0;
-  background-color: #07377a;
-  box-shadow: 0px 10px 24px white;
-  border: 1px solid #07377a;
+h1{
+  font-size: 30px;
+  text-align: center;
 }
-
-.outsideBtn:focus{
-  color: #e0e0e0;
-  background-color: #07377a;
-  box-shadow: 0px 10px 24px white;
-  border: 1px solid #07377a;
+h2{
+  font-size: 18px;
+  text-align: center;
 }
-
-.basic{
-  background-color: hotpink;
+.buttons{
+  margin: 0;
+  text-align: center;
+  display: none;
+  clear: both;
 }
-
-.hoverCard{
-  border: 3px solid purple;
-  box-shadow: 0px 8px 24px yellow;
+p{
+  text-align: center;
+  display: none;
 }
-
-input:checked + label + .description { display:none; }
-
-
-
+@media (min-width: 500px) and (max-width: 800px) {
+  .buttons {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+  }
+}
+.somethingelse {
+  font-size: 18px;
+  display: block;
+  margin: 0;
+}
+.somethingelse:hover{
+  background-color: orange;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+}
+.somethingelse:focus{
+  background-color: orange;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+}
+.addOne{
+  font-size: 18px;
+  display: block;
+  margin: 0;
+}
+.addOne:hover{
+  background-color: lightseagreen;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+}
+.addOne:focus{
+  background-color: lightseagreen;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+}
+.remove {
+  font-size: 18px;
+  display: block;
+  margin: 0;
+}
+.remove:hover {
+  background-color: green;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+}
+.remove:focus{
+  background-color: green;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+}
+.colorChanger{
+  font-size: 18px;
+  display: block;
+  margin: 0;
+}
+.colorChanger:hover{
+  background: linear-gradient(
+    to right,
+    red,
+    yellow,
+    red,
+    blue,
+    cyan,
+    blue,
+    violet
+  );
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+}
+.colorChanger:focus{
+  background: linear-gradient(
+    to right,
+    red,
+    yellow,
+    red,
+    blue,
+    cyan,
+    blue,
+    violet
+  );
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+}
+@media (max-width: 500px) {
+  .crd {
+    transform: scale(0.8);
+  }
+  .image {
+    width: 300px;
+  }
+  h1 {
+    font-size: 18px;
+  }
+  p {
+    font-size: 12px;
+  }
+};
 </style>
